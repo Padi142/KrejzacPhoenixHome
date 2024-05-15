@@ -1,5 +1,5 @@
-defmodule KrejzacAppWeb.PageControllerTest do
-  use KrejzacAppWeb.ConnCase
+defmodule krejzacappWeb.PageControllerTest do
+  use krejzacappWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")

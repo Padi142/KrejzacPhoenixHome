@@ -1,6 +1,6 @@
-defmodule KrejzacAppWeb.Cursors do
-  alias KrejzacAppWeb.Presence
-  use KrejzacAppWeb, :live_view
+defmodule krejzacappWeb.Cursors do
+  alias krejzacappWeb.Presence
+  use krejzacappWeb, :live_view
 
   @channel_topic "cursor_page"
 
@@ -19,7 +19,7 @@ defmodule KrejzacAppWeb.Cursors do
       animal: animal
     })
 
-    KrejzacAppWeb.Endpoint.subscribe(@channel_topic)
+    krejzacappWeb.Endpoint.subscribe(@channel_topic)
 
     initial_users =
       Presence.list(@channel_topic)

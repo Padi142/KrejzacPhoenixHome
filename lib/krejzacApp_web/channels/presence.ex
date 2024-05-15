@@ -1,4 +1,4 @@
-defmodule KrejzacAppWeb.Presence do
+defmodule krejzacappWeb.Presence do
   @moduledoc """
   Provides presence tracking to channels and processes.
 
@@ -6,6 +6,6 @@ defmodule KrejzacAppWeb.Presence do
   docs for more details.
   """
   use Phoenix.Presence,
-    otp_app: :krejzacApp,
-    pubsub_server: KrejzacApp.PubSub
+    otp_app: :krejzacapp,
+    pubsub_server: krejzacapp.PubSub
 end

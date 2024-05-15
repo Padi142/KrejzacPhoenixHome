@@ -1,9 +1,9 @@
-defmodule KrejzacApp.MixProject do
+defmodule krejzacapp.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :krejzacApp,
+      app: :krejzacapp,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule KrejzacApp.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {KrejzacApp.Application, []},
+      mod: {krejzacapp.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -67,10 +67,10 @@ defmodule KrejzacApp.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind krejzacApp", "esbuild krejzacApp"],
+      "assets.build": ["tailwind krejzacapp", "esbuild krejzacapp"],
       "assets.deploy": [
-        "tailwind krejzacApp --minify",
-        "esbuild krejzacApp --minify",
+        "tailwind krejzacapp --minify",
+        "esbuild krejzacapp --minify",
         "phx.digest"
       ]
     ]

@@ -1,12 +1,12 @@
-defmodule KrejzacAppWeb do
+defmodule krejzacappWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use KrejzacAppWeb, :controller
-      use KrejzacAppWeb, :html
+      use krejzacappWeb, :controller
+      use krejzacappWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule KrejzacAppWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: KrejzacAppWeb.Layouts]
+        layouts: [html: krejzacappWeb.Layouts]
 
       import Plug.Conn
-      import KrejzacAppWeb.Gettext
+      import krejzacappWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule KrejzacAppWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {KrejzacAppWeb.Layouts, :app}
+        layout: {krejzacappWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule KrejzacAppWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import KrejzacAppWeb.CoreComponents
-      import KrejzacAppWeb.Gettext
+      import krejzacappWeb.CoreComponents
+      import krejzacappWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule KrejzacAppWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: KrejzacAppWeb.Endpoint,
-        router: KrejzacAppWeb.Router,
-        statics: KrejzacAppWeb.static_paths()
+        endpoint: krejzacappWeb.Endpoint,
+        router: krejzacappWeb.Router,
+        statics: krejzacappWeb.static_paths()
     end
   end
 

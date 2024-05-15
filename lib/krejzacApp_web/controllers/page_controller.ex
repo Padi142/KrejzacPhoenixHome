@@ -1,5 +1,5 @@
-defmodule KrejzacAppWeb.PageController do
-  use KrejzacAppWeb, :controller
+defmodule krejzacappWeb.PageController do
+  use krejzacappWeb, :controller
 
   def home(conn, _params) do
     # The home page is often custom made,

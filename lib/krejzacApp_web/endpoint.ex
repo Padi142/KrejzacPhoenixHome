@@ -1,12 +1,12 @@
-defmodule KrejzacAppWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :krejzacApp
+defmodule krejzacappWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :krejzacapp
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_krejzacApp_key",
+    key: "_krejzacapp_key",
     signing_salt: "nsg2SjIT",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule KrejzacAppWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :krejzacApp,
+    from: :krejzacapp,
     gzip: false,
-    only: KrejzacAppWeb.static_paths()
+    only: krejzacappWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -44,5 +44,5 @@ defmodule KrejzacAppWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug KrejzacAppWeb.Router
+  plug krejzacappWeb.Router
 end
