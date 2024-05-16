@@ -12,7 +12,7 @@ config :krejzac_app,
 
 # Configures the endpoint
 config :krejzac_app, KrejzacAppWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "krejzac.cz"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [html: KrejzacAppWeb.ErrorHTML, json: KrejzacAppWeb.ErrorJSON],
