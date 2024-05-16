@@ -34,6 +34,20 @@ defmodule KrejzacAppWeb.Cursors do
     {:ok, updated}
   end
 
+  def handle_event("username-change", %{"username" => username}, socket) do
+    key = socket.id
+    payload = %{username: username}
+
+    metas =
+      Presence.get_by_key(@channel_topic, key)[:metas]
+      |> List.first()
+      |> Map.merge(payload)
+
+    Presence.update(self(), @channel_topic, key, metas)
+
+    {:noreply, socket}
+  end
+
   def handle_event("cursor-move", %{"mouse_x" => x, "mouse_y" => y}, socket) do
     key = socket.id
     payload = %{x: x, y: y}
