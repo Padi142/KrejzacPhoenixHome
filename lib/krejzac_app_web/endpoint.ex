@@ -1,13 +1,13 @@
 defmodule KrejzacAppWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :krejzacApp
+  use Phoenix.Endpoint, otp_app: :krejzac_app
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_krejzacApp_key",
-    signing_salt: "nsg2SjIT",
+    key: "_krejzac_app_key",
+    signing_salt: "yn/u+ewJ",
     same_site: "Lax"
   ]
 
@@ -21,7 +21,7 @@ defmodule KrejzacAppWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :krejzacApp,
+    from: :krejzac_app,
     gzip: false,
     only: KrejzacAppWeb.static_paths()
 

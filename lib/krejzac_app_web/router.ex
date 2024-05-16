@@ -19,6 +19,7 @@ defmodule KrejzacAppWeb.Router do
 
     # get "/", PageController, :home
     live "/", Cursors
+
   end
 
   # Other scopes may use custom stacks.

@@ -1,2 +1,2 @@
 set PHX_SERVER=true
-call "%~dp0\krejzacApp" start
+call "%~dp0\krejzac_app" start

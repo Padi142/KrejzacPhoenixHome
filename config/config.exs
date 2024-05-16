@@ -7,11 +7,11 @@
 # General application configuration
 import Config
 
-config :krejzacApp,
+config :krejzac_app,
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :krejzacApp, KrejzacAppWeb.Endpoint,
+config :krejzac_app, KrejzacAppWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
@@ -19,12 +19,12 @@ config :krejzacApp, KrejzacAppWeb.Endpoint,
     layout: false
   ],
   pubsub_server: KrejzacApp.PubSub,
-  live_view: [signing_salt: "/V5fFsJo"]
+  live_view: [signing_salt: "HoixY+P0"]
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  krejzacApp: [
+  krejzac_app: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -34,7 +34,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.0",
-  krejzacApp: [
+  krejzac_app: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

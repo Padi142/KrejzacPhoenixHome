@@ -9,7 +9,7 @@ defmodule KrejzacApp.Application do
   def start(_type, _args) do
     children = [
       KrejzacAppWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:krejzacApp, :dns_cluster_query) || :ignore},
+      {DNSCluster, query: Application.get_env(:krejzac_app, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: KrejzacApp.PubSub},
       # Start a worker by calling: KrejzacApp.Worker.start_link(arg)
       # {KrejzacApp.Worker, arg},

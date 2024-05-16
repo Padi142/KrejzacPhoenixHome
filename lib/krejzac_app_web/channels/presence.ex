@@ -6,6 +6,6 @@ defmodule KrejzacAppWeb.Presence do
   docs for more details.
   """
   use Phoenix.Presence,
-    otp_app: :krejzacApp,
+    otp_app: :krejzac_app,
     pubsub_server: KrejzacApp.PubSub
 end

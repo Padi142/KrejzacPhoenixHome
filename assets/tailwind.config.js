@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/krejzacApp_web.ex",
-    "../lib/krejzacApp_web/**/*.*ex"
+    "../lib/krejzac_app_web.ex",
+    "../lib/krejzac_app_web/**/*.*ex"
   ],
   theme: {
     extend: {

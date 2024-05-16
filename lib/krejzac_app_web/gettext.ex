@@ -20,5 +20,5 @@ defmodule KrejzacAppWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :krejzacApp
+  use Gettext, otp_app: :krejzac_app
 end

@@ -3,7 +3,7 @@ defmodule KrejzacApp.MixProject do
 
   def project do
     [
-      app: :krejzacApp,
+      app: :krejzac_app,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -67,10 +67,10 @@ defmodule KrejzacApp.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind krejzacApp", "esbuild krejzacApp"],
+      "assets.build": ["tailwind krejzac_app", "esbuild krejzac_app"],
       "assets.deploy": [
-        "tailwind krejzacApp --minify",
-        "esbuild krejzacApp --minify",
+        "tailwind krejzac_app --minify",
+        "esbuild krejzac_app --minify",
         "phx.digest"
       ]
     ]
