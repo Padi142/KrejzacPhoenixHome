@@ -11,6 +11,10 @@ module.exports = {
     "../lib/krejzac_app_web.ex",
     "../lib/krejzac_app_web/**/*.*ex",
   ],
+  daisyui: {
+    themes: ["light", "dark", "cupcake", "valentine"],
+    logs: false,
+  },
   theme: {
     extend: {
       fontFamily: {
@@ -20,7 +24,8 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
+    // require("@tailwindcss/forms"),
+    require("daisyui"),
     // Allows prefixing tailwind classes with LiveView classes to add rules
     // only when LiveView classes are applied, for example:
     //
