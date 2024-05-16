@@ -1,4 +1,4 @@
-defmodule krejzacapp.Application do
+defmodule KrejzacApp.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -8,19 +8,19 @@ defmodule krejzacapp.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      krejzacappWeb.Telemetry,
-      {DNSCluster, query: Application.get_env(:krejzacapp, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: krejzacapp.PubSub},
-      # Start a worker by calling: krejzacapp.Worker.start_link(arg)
-      # {krejzacapp.Worker, arg},
+      KrejzacAppWeb.Telemetry,
+      {DNSCluster, query: Application.get_env(:krejzacApp, :dns_cluster_query) || :ignore},
+      {Phoenix.PubSub, name: KrejzacApp.PubSub},
+      # Start a worker by calling: KrejzacApp.Worker.start_link(arg)
+      # {KrejzacApp.Worker, arg},
       # Start to serve requests, typically the last entry
-      krejzacappWeb.Endpoint,
-      krejzacappWeb.Presence
+      KrejzacAppWeb.Endpoint,
+      KrejzacAppWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: krejzacapp.Supervisor]
+    opts = [strategy: :one_for_one, name: KrejzacApp.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
@@ -28,7 +28,7 @@ defmodule krejzacapp.Application do
   # whenever the application is updated.
   @impl true
   def config_change(changed, _new, removed) do
-    krejzacappWeb.Endpoint.config_change(changed, removed)
+    KrejzacAppWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -1,6 +1,6 @@
-defmodule krejzacapp do
+defmodule KrejzacApp do
   @moduledoc """
-  krejzacapp keeps the contexts that define your domain
+  KrejzacApp keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

@@ -1,11 +1,11 @@
-defmodule krejzacappWeb.Router do
-  use krejzacappWeb, :router
+defmodule KrejzacAppWeb.Router do
+  use KrejzacAppWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, html: {krejzacappWeb.Layouts, :root}
+    plug :put_root_layout, html: {KrejzacAppWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,7 +14,7 @@ defmodule krejzacappWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", krejzacappWeb do
+  scope "/", KrejzacAppWeb do
     pipe_through :browser
 
     # get "/", PageController, :home
@@ -22,7 +22,7 @@ defmodule krejzacappWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", krejzacappWeb do
+  # scope "/api", KrejzacAppWeb do
   #   pipe_through :api
   # end
 end
