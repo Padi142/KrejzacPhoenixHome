@@ -26,13 +26,36 @@ let Hooks = {};
 
 Hooks.TrackClientCursor = {
   mounted() {
+    let eventSent = false; // Initialize a flag to track whether an event has been sent
+
+    const sendEvent = (e) => {
+      if (!eventSent) {
+        const mouse_x = (e.pageX / window.innerWidth) * 100; // in %
+        const mouse_y = (e.pageY / window.innerHeight) * 100; // in %
+        this.pushEvent("cursor-move", { mouse_x, mouse_y });
+        eventSent = true;
+
+        setTimeout(() => {
+          eventSent = false; // Reset the flag after 100 milliseconds
+        }, 5);
+      }
+    };
+
     document.addEventListener("mousemove", (e) => {
-      const mouse_x = (e.pageX / window.innerWidth) * 100; // in %
-      const mouse_y = (e.pageY / window.innerHeight) * 100; // in %
-      this.pushEvent("cursor-move", { mouse_x, mouse_y });
+      sendEvent(e);
     });
   },
 };
+
+// Hooks.TrackClientCursor = {
+//   mounted() {
+//     document.addEventListener("mousemove", (e) => {
+//       const mouse_x = (e.pageX / window.innerWidth) * 100; // in %
+//       const mouse_y = (e.pageY / window.innerHeight) * 100; // in %
+//       this.pushEvent("cursor-move", { mouse_x, mouse_y });
+//     });
+//   },
+// };
 
 let csrfToken = document
   .querySelector("meta[name='csrf-token']")
