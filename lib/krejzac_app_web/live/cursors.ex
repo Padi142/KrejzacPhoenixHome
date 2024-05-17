@@ -38,6 +38,11 @@ defmodule KrejzacAppWeb.Cursors do
     key = socket.id
     payload = %{username: username}
 
+    if String.length(username) > 30 do
+
+      {:noreply, socket}
+    else
+
     metas =
       Presence.get_by_key(@channel_topic, key)[:metas]
       |> List.first()
@@ -46,6 +51,7 @@ defmodule KrejzacAppWeb.Cursors do
     Presence.update(self(), @channel_topic, key, metas)
 
     {:noreply, socket}
+    end
   end
 
   def handle_event("cursor-move", %{"mouse_x" => x, "mouse_y" => y}, socket) do
